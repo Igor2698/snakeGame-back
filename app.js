@@ -59,7 +59,7 @@ const port = 3000;
 
 
 app.listen(port, () => {
-  console.log(`Server started succesfully on port ${port} `)
+  console.log(`Server started successfully on port ${port}`);
 });
 
 
