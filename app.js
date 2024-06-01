@@ -1,22 +1,8 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import dotenv from "dotenv";
 import pkg from 'pg';
 const { Pool } = pkg;
-
-
-
-
-
-
-
-
-import contactsRouter from './routes/contactsRouter.js'
-import authRouter from "./routes/authRouter.js";
-
-
-dotenv.config()
 
 const app = express();
 
@@ -69,13 +55,11 @@ app.post('/gamer', async (req, res) => {
 });
 
 
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 
 app.listen(port, () => {
-
-
-
+  console.log(`Server started succesfully on port ${port} `)
 });
 
 
