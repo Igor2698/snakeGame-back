@@ -13,13 +13,18 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'))
 
+
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
+  user: 'snakegame_user',
+  host: 'dpg-cpdmu3dds78s73elbhs0-a.frankfurt-postgres.render.com',
   database: 'snakegame',
-  password: 'Igoresha1713',
+  password: 'RmaOVkHtUqzfKFmYdYvUit0JzCQRoR89',
   port: 5432,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
+
 
 
 app.get('/gamer', async (req, res) => {
@@ -33,7 +38,6 @@ app.get('/gamer', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
 
 app.post('/gamer', async (req, res) => {
   const { first_name, score } = req.body;
@@ -56,7 +60,6 @@ app.post('/gamer', async (req, res) => {
 
 
 const port = 3000;
-
 
 app.listen(port, () => {
   console.log(`Server started successfully on port ${port}`);
